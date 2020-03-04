@@ -1,42 +1,37 @@
 let input = document.querySelector('.input');
 let output = document.querySelector('.output');
 let convert = document.querySelector('.convert');
-let inputValue;
-let converted;
-let dec;
-let decValue = [];
-let binValue = 2;
-let decimal = 0;
-
+let clipboard = document.querySelector('.clipboard');
 
 convert.addEventListener('click', () => {
-  inputValue = input.value;
+  let inputValue = input.value;
 
-  converted = convertToDec(inputValue);
+  let converted = convertToDec(inputValue);
 
   output.value = converted;
+});
 
-  if (output.value === "Invalid") {
-    output.classList.add('warning');
-  } else {
-    output.classList.remove('warning');
+clipboard.addEventListener('click', () => {
+  let selected = document.getSelection().rangeCount > 0 ? document.getSelection().getRangeAt(0) : false;
+
+  output.select();
+
+  document.execCommand('copy');
+
+  if (selected) {
+    document.getSelection().removeAllRanges();
+
+    document.getSelection().addRange(selected);
   }
-
-  dec = 0;
-  decValue = [];
-  decimal = 0;
 });
 
 function convertToDec(bin) {
-  dec = bin.split('');
+  const dec = bin.split('').reverse();
+  let decimal = 0;
 
   dec.forEach((e, i) => {
-    decValue.push(Math.pow(binValue, i));
-  });
-
-  dec.forEach((e, i) => {
-    if (e === '1' || decValue[i] === 1) {
-      decimal += decValue[i];
+    if (e === '1') {
+      decimal += Math.pow(2, i);
     }
   });
 
