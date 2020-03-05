@@ -3,6 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="icon" href="/img//favico.png">
   <link rel="stylesheet" href="style.css">
   <title>Bin2Dec</title>
 </head>
@@ -13,12 +14,12 @@
       <p class="subtitle">Convert binary into an integer on the go</p>
     </div>
     <div class="form">
-      <input class="input" type="number">
-      <input class="output" type="number" readonly>
+      <input class="input" type="number" min="0" max="1" placeholder="Enter binary number">
+      <input class="output" type="text" placeholder="Conversion result" readonly>
     </div>
     <div class="buttons">
-      <button class="convert">Convert</button>
-      <button class="clipboard">Copy to clipboard</button>
+      <button class="convert"><span></span>Convert</button>
+      <button class="clipboard"><span></span>Copy to clipboard</button>
     </div>
   </div>
   <script src="/main.js"></script>

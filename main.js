@@ -30,7 +30,7 @@ function convertToDec(bin) {
   let decimal = 0;
 
   dec.forEach((e, i) => {
-    if (e === '1') {
+    if (e === "1") {
       decimal += Math.pow(2, i);
     }
   });
