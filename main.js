@@ -5,8 +5,10 @@ let clipboard = document.querySelector('.clipboard');
 
 convert.addEventListener('click', () => {
   let inputValue = input.value;
+  
+  let regex = new RegExp('[^0-1]');
 
-  let converted = convertToDec(inputValue);
+  let converted = regex.test(inputValue) ? 'Enter a valid binary number' : convertToDec(inputValue);
 
   output.value = converted;
 });
@@ -30,7 +32,7 @@ function convertToDec(bin) {
   let decimal = 0;
 
   dec.forEach((e, i) => {
-    if (e === "1") {
+    if (e === '1') {
       decimal += Math.pow(2, i);
     }
   });

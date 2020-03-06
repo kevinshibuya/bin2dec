@@ -21,7 +21,6 @@
 - This project was made to make it easy to convert binary numbers into decimals.
 - It's part of a series of challenges from this <a href="https://github.com/florinpop17/app-ideas">repo.</a>
 - If you want to give it a shot, <a href="https://github.com/florinpop17/app-ideas/blob/master/Projects/1-Beginner/Bin2Dec-App.md">go ahead.</a>
-- There's still two things missing, the notification when the user enter anything that's not 0 or 1, and more refined animation for the buttons.
 
 
 ---
